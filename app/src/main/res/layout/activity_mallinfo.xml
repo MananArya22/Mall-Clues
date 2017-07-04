@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:gravity="center"
-                android:padding="10dp"/>
+                android:padding="10dp" />
         </LinearLayout>
 
         <TextView
@@ -45,8 +45,7 @@
             android:gravity="center"
             android:text="Select the Store Category:"
             android:textSize="15dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +60,7 @@
                 android:layout_weight="2"
                 android:background="@android:drawable/alert_dark_frame"
                 android:text="Clothing"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_food"
@@ -70,7 +69,7 @@
                 android:layout_weight="1"
                 android:background="@android:drawable/alert_dark_frame"
                 android:text="Food"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_footwear"
@@ -79,7 +78,7 @@
                 android:layout_weight="2"
                 android:background="@android:drawable/alert_dark_frame"
                 android:text="Footwear"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
@@ -96,7 +95,7 @@
                 android:layout_weight="2"
                 android:background="@android:drawable/alert_dark_frame"
                 android:text="Electronics"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_entertainment"
@@ -105,7 +104,7 @@
                 android:layout_weight="2"
                 android:background="@android:drawable/alert_dark_frame"
                 android:text="Entertainment"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_allstores"
@@ -114,7 +113,7 @@
                 android:layout_weight="1"
                 android:background="@android:drawable/alert_dark_frame"
                 android:text="All"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
@@ -124,9 +123,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="15dp"
             android:padding="10dp"
-            android:textStyle="italic"/>
+            android:textSize="15dp"
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/Mall_Website"
@@ -134,8 +133,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="15dp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/Mall_Contact"
@@ -143,8 +142,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="15dp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/Mall_Developer"
@@ -152,8 +151,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="15dp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/Mall_GuestServices"
@@ -161,9 +160,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="15dp"
             android:padding="10dp"
-            android:textStyle="italic"/>
+            android:textSize="15dp"
+            android:textStyle="italic" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -175,15 +174,17 @@
             app:srcCompat="@android:drawable/ic_dialog_map" />
 
         <ImageView
+            android:id="@+id/Mall_SecondImage"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:id="@+id/Mall_SecondImage"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY" />
 
-
-
-
-
+        <Button
+            android:id="@+id/UpdateFormButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Click Me, If you wish to add your Store/Mall or make changes in the existing one." />
 
 
     </LinearLayout>

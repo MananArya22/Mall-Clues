@@ -33,29 +33,24 @@ import timber.log.Timber;
 public class GoogleSignInActivity extends BaseActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
     private static final int RC_SIGN_IN = 9001;
-
-    private GoogleApiClient mGoogleApiClient;
-
     private static boolean USER_IN_DB = false;
-
+    SignInButton signInButton;
+    TextView appName;
+    // [END declare_auth]
+    private GoogleApiClient mGoogleApiClient;
     // [START declare_auth]
     private FirebaseAuth mAuth;
-    // [END declare_auth]
-
     // [START declare_auth_listener]
     private FirebaseAuth.AuthStateListener mAuthListener;
     // [END declare_auth_listener]
     private FirebaseDatabase database;
 
-    SignInButton signInButton;
-    TextView appName;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_sign_in);
-        signInButton=(SignInButton) findViewById(R.id.sign_in_button) ;
-        appName=(TextView) findViewById(R.id.app_name) ;
+        signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        appName = (TextView) findViewById(R.id.app_name);
         Timber.plant(new Timber.DebugTree());
 //        Configure sign-in to request the user's ID, email address, and basic
 //        profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -165,54 +160,6 @@ public class GoogleSignInActivity extends BaseActivity implements View.OnClickLi
         }
     }
 
-
-/*    private void updateUserToFirebaseDb(final FirebaseUser user) {
-        DatabaseReference myRef = database.getReference("users");
-        myRef.orderByKey().equalTo(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Timber.d("Data Snapshot Key " + dataSnapshot.getKey());
-                if (dataSnapshot.getValue() != null) {
-                    Timber.d("token Change only");
-                    dataSnapshot.getRef().child(user.getUid()).child("fcmtoken").setValue(FirebaseInstanceId.getInstance().getToken());
-                } else {
-                    Timber.d("Entire Change");
-                    UserModel userModel = new UserModel(user.getUid(), user.getEmail(), user.getPhotoUrl().toString(), user.getDisplayName());
-                    userModel.setFCMToken(FirebaseInstanceId.getInstance().getToken());
-                    dataSnapshot.getRef().child(user.getUid()).setValue(userModel);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-//        myRef.addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
-//                Timber.d("Data Snapshot Key " + dataSnapshot.getKey());
-//                Timber.d("Data Snapshot " + dataSnapshot.child(user.getUid()).getKey());
-//                Timber.d("UID " + user.getUid());
-//                Timber.d("CurrentUser: " + dataSnapshot.child(user.getUid()).getValue());
-//                if(dataSnapshot.child(user.getUid()).getValue() != null){
-//                    USER_IN_DB = true;
-//                }
-//            }
-//
-//            @Override
-//            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
-//
-//            @Override
-//            public void onChildRemoved(DataSnapshot dataSnapshot) {}
-//
-//            @Override
-//            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {}
-//        });
-    }*/
 
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();

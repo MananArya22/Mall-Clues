@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.setClass(MainActivity.this, MallsListActivity.class);
                 i.putExtra("selectedRegion", "north");
-                Log.i("region","north");
+                Log.i("region", "north");
                 startActivity(i);
             }
         });
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.setClass(MainActivity.this, MallsListActivity.class);
                 i.putExtra("selectedRegion", "west");
-                Log.i("region","west");
+                Log.i("region", "west");
                 startActivity(i);
             }
         });
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.setClass(MainActivity.this, MallsListActivity.class);
                 i.putExtra("selectedRegion", "east");
-                Log.i("region","east");
+                Log.i("region", "east");
                 startActivity(i);
             }
         });
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.setClass(MainActivity.this, MallsListActivity.class);
                 i.putExtra("selectedRegion", "south");
-                Log.i("region","south");
+                Log.i("region", "south");
                 startActivity(i);
             }
         });

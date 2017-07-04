@@ -38,16 +38,6 @@ public class StoreAdapter extends ArrayAdapter<Store> {
         this.context = context;
     }
 
-    private static class StoreHolder {
-        TextView storeName;
-        ImageView storeImage;
-
-        public StoreHolder(TextView storeName, ImageView storeImage) {
-            this.storeName = storeName;
-            this.storeImage = storeImage;
-        }
-    }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -64,7 +54,7 @@ public class StoreAdapter extends ArrayAdapter<Store> {
         holder.storeName.setText(currentStore.getName());
 
 
-        StorageReference imagesRef = storageRef.child(currentStore.getRegion()+"Stores/"+  currentStore.getStoreid() + ".jpg");
+        StorageReference imagesRef = storageRef.child(currentStore.getRegion() + "Stores/" + currentStore.getStoreid() + ".jpg");
 
         Glide.with(context)
                 .using(new FirebaseImageLoader())
@@ -73,6 +63,16 @@ public class StoreAdapter extends ArrayAdapter<Store> {
 
         return v;
 
+    }
+
+    private static class StoreHolder {
+        TextView storeName;
+        ImageView storeImage;
+
+        public StoreHolder(TextView storeName, ImageView storeImage) {
+            this.storeName = storeName;
+            this.storeImage = storeImage;
+        }
     }
 
 }

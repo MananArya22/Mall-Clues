@@ -34,34 +34,31 @@ public class StoreInformationActivity extends AppCompatActivity {
     String mallAddress;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeinfo);
 
-        StoreName=(TextView) findViewById(R.id.Name_Store);
-        StoreAddress=(TextView) findViewById(R.id.Address_Store);
-        StoreOffers=(TextView) findViewById(R.id.Store_Offers);
-        StoreContact=(TextView) findViewById(R.id.Store_Contact);
-        StoreDescription=(TextView) findViewById(R.id.Store_Description);
-        StoreCategory=(TextView) findViewById(R.id.Store_Category);
-        StoreImage=(ImageView) findViewById(R.id.Image_Store);
+        StoreName = (TextView) findViewById(R.id.Name_Store);
+        StoreAddress = (TextView) findViewById(R.id.Address_Store);
+        StoreOffers = (TextView) findViewById(R.id.Store_Offers);
+        StoreContact = (TextView) findViewById(R.id.Store_Contact);
+        StoreDescription = (TextView) findViewById(R.id.Store_Description);
+        StoreCategory = (TextView) findViewById(R.id.Store_Category);
+        StoreImage = (ImageView) findViewById(R.id.Image_Store);
 
-        MallName=getIntent().getStringExtra("MallName");
-        StoreId=getIntent().getStringExtra("StoreId");
-        Region=getIntent().getStringExtra("Region");
-        MallId=getIntent().getStringExtra("MallId");
-        mallAddress=getIntent().getStringExtra("MallAddress");
+        MallName = getIntent().getStringExtra("MallName");
+        StoreId = getIntent().getStringExtra("StoreId");
+        Region = getIntent().getStringExtra("Region");
+        MallId = getIntent().getStringExtra("MallId");
+        mallAddress = getIntent().getStringExtra("MallAddress");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.Store_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mallAddress!=null)
-                {
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q="+MallName+", "+mallAddress);
+                if (mallAddress != null) {
+                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + MallName + ", " + mallAddress);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -71,39 +68,31 @@ public class StoreInformationActivity extends AppCompatActivity {
         });
 
 
-
-        String Name=getIntent().getStringExtra("Name");
-        if(Name!=null)
-        {
+        String Name = getIntent().getStringExtra("Name");
+        if (Name != null) {
             StoreName.setText(Name);
         }
-        String Offers=getIntent().getStringExtra("Offers");
-        if(Offers!=null)
-        {
-            StoreOffers.setText("Offers: "+Offers);
+        String Offers = getIntent().getStringExtra("Offers");
+        if (Offers != null) {
+            StoreOffers.setText("Offers: " + Offers);
         }
-        String PhoneNumber=getIntent().getStringExtra("PhoneNumber");
-        if(PhoneNumber!=null)
-        {
-            StoreContact.setText("Contact: "+PhoneNumber);
+        String PhoneNumber = getIntent().getStringExtra("PhoneNumber");
+        if (PhoneNumber != null) {
+            StoreContact.setText("Contact: " + PhoneNumber);
         }
 
-        String Address=getIntent().getStringExtra("Address");
-        if(Address!=null && MallName!=null)
-        {
-            StoreAddress.setText("Address: "+Address+", "+MallName);
+        String Address = getIntent().getStringExtra("Address");
+        if (Address != null && MallName != null) {
+            StoreAddress.setText("Address: " + Address + ", " + MallName);
         }
-        String Category=getIntent().getStringExtra("Category");
-        if(Category!=null)
-        {
-            StoreCategory.setText("Category: "+ Category);
+        String Category = getIntent().getStringExtra("Category");
+        if (Category != null) {
+            StoreCategory.setText("Category: " + Category);
         }
-        String Description=getIntent().getStringExtra("Description");
-        if(Description!=null)
-        {
-            StoreDescription.setText("Description: "+Description);
+        String Description = getIntent().getStringExtra("Description");
+        if (Description != null) {
+            StoreDescription.setText("Description: " + Description);
         }
-
 
 
     }
@@ -113,7 +102,7 @@ public class StoreInformationActivity extends AppCompatActivity {
         super.onStart();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
-        StorageReference imagesRef = storageRef.child(Region+"Stores/"+  StoreId + ".jpg");
+        StorageReference imagesRef = storageRef.child(Region + "Stores/" + StoreId + ".jpg");
 
         Glide.with(this)
                 .using(new FirebaseImageLoader())
