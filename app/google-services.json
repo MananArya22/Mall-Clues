@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "913778566181",
+    "firebase_url": "https://mall-clues.firebaseio.com",
+    "project_id": "mall-clues",
+    "storage_bucket": "mall-clues.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913778566181:android:0f91461c785aac0d",
+        "android_client_info": {
+          "package_name": "in.co.mananarya.mallclues"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913778566181-8hv47k9iivjrnv9vvjbsi9cjb9tcc7vp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.co.mananarya.mallclues",
+            "certificate_hash": "88afe491521c08a38fe8655c334ec25df7e98bf1"
+          }
+        },
+        {
+          "client_id": "913778566181-rjgqkk5um6n2qfmcigrvi8klehnmoa4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqhR7oEEJklUhTi0O0iFmBvmDOOzrwBcc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913778566181-rjgqkk5um6n2qfmcigrvi8klehnmoa4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
